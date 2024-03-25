@@ -1,5 +1,5 @@
 provider "google" {
-  project = var.project_id  #"graphic-cosmos-417822"
-  region  = var.region      #"us-central1"
-  zone    = var.region_zone #"us-central1-a"
+  credentials = file("/Users/devops_explorer/Downloads/GKE Terraform/tf-live/tf-live/gke/prefab-armor-417822-804633c59b79.json")
+  project     = var.project_id
+  region      = var.region
 }

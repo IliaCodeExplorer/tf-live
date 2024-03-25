@@ -1,44 +1,30 @@
-variable "service_account_id" {
-  type = string
-
-}
-variable "display_name" {
-  type = string
-
-}
-variable "cluster_name" {
-  type = string
-
-}
-variable "location_tf" {
-  type = string
-
-}
-variable "node_count" {
-  type = string
-
-}
-variable "cluster_disk_size" {
-  type = number
-
-}
-variable "cluster_node" {
-  type = number
-
-}
-variable "machine_type" {
-  type = string
-
-}
 variable "project_id" {
-  type = string
-
+  type        = string
+  default = "prefab-armor-417822"
 }
+
 variable "region" {
-  type = string
-
+  type        = string
+  default     = "us-central1"
 }
-variable "region_zone" {
-  type = string
 
+variable "service_account_id" {
+  description = "The ID for the service account"
+  type        = string
+}
+
+variable "service_account_display_name" {
+  description = "The display name for the service account"
+  type        = string
+}
+
+variable "cluster_name" {
+  description = "The name of the GKE cluster"
+  type        = string
+}
+
+variable "cluster_location" {
+  description = "The location for the GKE cluster, can be a region or zone"
+  type        = string
+  default     = "us-central1"
 }

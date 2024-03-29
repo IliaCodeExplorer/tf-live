@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx1
+  labels:
+    managed-by: dso
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      application: nginx1
+  template:
+    metadata:
+      annotations:
+      labels:
+    spec:
+      serviceAccountName: nginx-sa
+      containers:
+        - name: nginx
+          image: us-central1-docker.pkg.dev/terraform-project-418516/app-registry/nginx1:v1
+          ports:
+            - name: http
+              containerPort: 80

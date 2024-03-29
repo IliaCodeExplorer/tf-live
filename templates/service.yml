@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+  labels:
+    managed-by: dso
+spec:
+  selector:
+    application: nginx1
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
